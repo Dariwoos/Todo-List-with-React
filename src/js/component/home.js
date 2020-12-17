@@ -5,8 +5,9 @@ import DeletButton from "./DeletButton.jsx";
 export function Home() {
 	const [task, setTask] = useState([]);
 	const handelDown = e => {
+        e.preventDefault();
 		if (e.keyCode == 13 && e.target.value != "") {
-			e.preventDefault();
+			
 			let emptyList = [...task, e.target.value];
 			e.target.value = "";
 			setTask(emptyList);
